@@ -2,6 +2,7 @@ import axios from "axios";
 import type { ReactNode } from "react";
 // Define the Movie type locally or ensure it is imported from a valid source
 export interface Movie {
+  poster_path: any;
   backdrop_path: unknown;
   vote_average: ReactNode;
   id: number;
