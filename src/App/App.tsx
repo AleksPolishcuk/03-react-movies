@@ -10,7 +10,7 @@ import { fetchMovies } from "../services/movieService";
 import { Movie } from "../types/movie";
 
 export default function App() {
-  const [query, setQuery] = useState("");
+  const [, setQuery] = useState("");
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
