@@ -1,5 +1,14 @@
 import axios from "axios";
-import { Movie } from "../types/movie";
+import type { ReactNode } from "react";
+// Define the Movie type locally or ensure it is imported from a valid source
+export interface Movie {
+  backdrop_path: unknown;
+  vote_average: ReactNode;
+  id: number;
+  title: string;
+  overview: string;
+  release_date: string;
+}
 
 const BASE_URL = "https://api.themoviedb.org/3/search/movie";
 
@@ -7,9 +16,9 @@ export async function fetchMovies(query: string): Promise<Movie[]> {
   const response = await axios.get(BASE_URL, {
     params: { query },
     headers: {
-      Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
+      // Removed redundant export as Movie is already exported above
     },
   });
+
   return response.data.results;
 }
-export { Movie };
